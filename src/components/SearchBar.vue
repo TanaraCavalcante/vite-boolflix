@@ -2,16 +2,32 @@
   export default {
      data() {
         return {
-          
+          movieListFilter:[],
+          selectedItem:'',
         }
   },
+  methods:{
+      logMessage(message){
+        console.log(`Chiamo log message con ${message}`);
+      }
+  }
 }
 </script>
 
 <template>
-<h3>SearchBar</h3>
+<div class="d-flex gap-3">
+  <input type="text" placeholder="Search a movie" >
+  <button class="btn btn-secondary" > Search </button>
+ 
+</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+  div{
+    margin-left: 10px;
 
+    input{
+      width: 40%;
+    }
+  }
 </style>
