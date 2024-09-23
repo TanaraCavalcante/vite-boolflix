@@ -11,7 +11,7 @@
 </script>
 
 <template>
-<div class="d-flex gap-3">
+<div class="d-flex gap-3 my-3">
   <input type="text" placeholder="Search a movie" >
   <button class="btn btn-secondary" > Search </button>
 </div>

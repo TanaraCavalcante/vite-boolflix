@@ -14,9 +14,13 @@ import ListMovieItem from './ListMovieItem.vue';
 </script>
 
 <template>
-  <h3>List Movie</h3>
-
-  <ListMovieItem />
+  <section class="container">  
+    <div class="row">
+         <div class="col-6 col-lg-4 my-2" v-for="n in 9">
+             <ListMovieItem />
+         </div>
+    </div>
+</section>
 </template>
 
 <style scoped>
