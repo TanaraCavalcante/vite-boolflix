@@ -1,9 +1,9 @@
 <script>
-import {store} from "../store";
+
   export default {
      data() {
         return {
-          store
+          
         }
   },
   props:{
@@ -17,16 +17,18 @@ import {store} from "../store";
 
 <template>
 
-    <article class="card" style="width: 18rem;">
-            <h3 class="card-title">title</h3>
-            <h5 class="card-title">original_title</h5>
-            <p class="card-text">original_language</p>
-            <p class="card-text">vote_average</p>
+    <article class="card d-flex">
+            <h3 class="card-title text-center my-4">{{ objectCard.title }}</h3>
+            <p class="card-title text-center">{{ objectCard.original_title }}</p>
+            <p class="card-text">{{ objectCard.original_language }}</p>
+            <p class="card-text">{{ objectCard.vote_average }}</p>
         
     </article>
 
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
+   article{
+      height: 260px;
+   }
 </style>

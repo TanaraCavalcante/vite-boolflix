@@ -18,7 +18,7 @@ import {store} from "../store"
   <section class="container">  
     <div class="row">
          <div class="col-6 col-lg-4 my-2" v-for="(movieListFilterItem, i) in store.movieListFilter" :key="i" :objectCard="movieListFilterItem" >
-             <ListMovieItem />
+             <ListMovieItem :objectCard="movieListFilterItem"/>
          </div>
     </div>
     <span>A lista tem {{ store.movieListFilter.length }} filmes!</span>
