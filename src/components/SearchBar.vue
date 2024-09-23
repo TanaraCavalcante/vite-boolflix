@@ -1,16 +1,13 @@
 <script>
+
+
   export default {
      data() {
         return {
-          movieListFilter:[],
-          selectedItem:'',
+          
         }
   },
-  methods:{
-      logMessage(message){
-        console.log(`Chiamo log message con ${message}`);
-      }
-  }
+ 
 }
 </script>
 
@@ -18,8 +15,17 @@
 <div class="d-flex gap-3">
   <input type="text" placeholder="Search a movie" >
   <button class="btn btn-secondary" > Search </button>
- 
 </div>
+
+<!--Criado para o main list-->
+<ul class="my-3">
+  <li>titolo</li>
+  <li>titolo originale</li>
+  <li>lingua</li>
+  <li>voto</li>
+</ul>
+ 
+
 </template>
 
 <style lang="scss" scoped>
