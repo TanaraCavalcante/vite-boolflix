@@ -19,6 +19,7 @@ export default {
       logMessage(message){
         console.log(`Chiamo log message con ${message}`);
       },
+      //Chiamata API
       getFilterMovies(){
         console.log('chiamata filterMovies iniziata')
         axios.get(this.apiUrl, {
@@ -39,7 +40,11 @@ export default {
         .finally(function () {
         console.log('Chiamata filter movies terminata!')
 
-        }); 
+        }),
+        created(){
+          this.getFilterMovies();
+        }
+        
       }
   }
 
