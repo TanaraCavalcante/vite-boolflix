@@ -3,14 +3,14 @@ import AppMain from './components/AppMain.vue';
 import SearchBar from './components/SearchBar.vue';
 import AppHeader from './components/AppHeader.vue';
 import axios from 'axios';
-
+import {store} from "./store" 
   
 export default {
      data() {
         return {
-          movieListFilter:[],
           selectedItem:'',
           apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=97614400969f8d7a2797b6a67b41513b&query=avengers",
+          store
         }
   },
   components:{
@@ -31,6 +31,7 @@ export default {
        
         .then((response) =>{
           console.log(response.data.results)
+          store.movieListFilter = response.data.results
         })
 
         .catch(function (error) {
@@ -52,7 +53,7 @@ export default {
 </script>
 
 <template>
-   
+   <h1>{{ store.message }}</h1>
    <AppHeader />
    <SearchBar />
    <AppMain />
