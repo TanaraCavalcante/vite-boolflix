@@ -1,12 +1,16 @@
 <script>
+import {store} from "../store";
   export default {
      data() {
         return {
-          
+          store
         }
   },
-  components: {
-  
+  props:{
+    objectCard:{
+        type: Object,
+        required: true
+    }
   }
 }
 </script>
@@ -14,13 +18,11 @@
 <template>
 
     <article class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">title</h5>
-            <h3 class="card-title">Original title</h3>
-            <p class="card-text">lingua</p>
-            <p class="card-text">voto</p>
-        </div>
+            <h3 class="card-title">title</h3>
+            <h5 class="card-title">original_title</h5>
+            <p class="card-text">original_language</p>
+            <p class="card-text">vote_average</p>
+        
     </article>
 
 </template>
