@@ -53,13 +53,14 @@ export default {
 </script>
 
 <template>
-   <h1>{{ store.message }}</h1>
+   <p class="my-3">{{ store.message }}</p>
    <AppHeader />
    <SearchBar />
    <AppMain />
 </template>
 
-<style lang="scss">
+<style lang="scss" >
+
   @use "./style/general.scss" as *;
   @use "../node_modules/bootstrap/scss/bootstrap.scss" as *;
 </style>
