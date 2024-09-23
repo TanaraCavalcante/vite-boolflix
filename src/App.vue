@@ -1,6 +1,6 @@
 <script>
-import SearchBar from './components/SearchBar.vue';
 import AppMain from './components/AppMain.vue';
+import AppHeader from './components/AppHeader.vue';
 import axios from 'axios';
   
 export default {
@@ -12,8 +12,8 @@ export default {
         }
   },
   components:{
-    SearchBar,
-    AppMain
+    AppMain,
+    AppHeader
   },
   methods:{
       logMessage(message){
@@ -40,20 +40,17 @@ export default {
         .finally(function () {
         console.log('Chiamata filter movies terminata!')
 
-        }),
-        created(){
-          this.getFilterMovies();
-        }
-        
-      }
+        });  
   }
-
-   
+},
+ 
+        
 }
 </script>
 
 <template>
-   <SearchBar />
+   
+   <AppHeader />
    <AppMain />
 </template>
 

@@ -1,6 +1,6 @@
 <script>
-
-
+import SearchBar from './SearchBar.vue';
+import ListMovie from './ListMovie.vue';
 
   export default {
      data() {
@@ -9,14 +9,16 @@
         }
   },
   components:{
-   
+   SearchBar,
+   ListMovie
   }
 }
 </script>
 
 <template>
-<h1>Main</h1>
-   
+
+   <SearchBar />
+   <ListMovie />
 </template>
 
 <style scoped>
