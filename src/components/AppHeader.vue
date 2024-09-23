@@ -12,7 +12,11 @@
 </script>
 
 <template>
-  <h2>Boolflix</h2>
+  <nav class=" bg-body-tertiary">
+     <div class="container-fluid">
+          <span class="mb-0 h2">BoolFlix</span>
+     </div>
+</nav>
 </template>
 
 <style scoped>

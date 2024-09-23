@@ -1,7 +1,9 @@
 <script>
 import AppMain from './components/AppMain.vue';
+import SearchBar from './components/SearchBar.vue';
 import AppHeader from './components/AppHeader.vue';
 import axios from 'axios';
+
   
 export default {
      data() {
@@ -13,6 +15,7 @@ export default {
   },
   components:{
     AppMain,
+    SearchBar,
     AppHeader
   },
   methods:{
@@ -23,7 +26,7 @@ export default {
       getFilterMovies(){
         console.log('chiamata filterMovies iniziata')
         axios.get(this.apiUrl, {
-           params: {
+            params: {
               api_key: '97614400969f8d7a2797b6a67b41513b',
               query: avengers,
             }
@@ -41,8 +44,11 @@ export default {
         console.log('Chiamata filter movies terminata!')
 
         });  
-  }
-},
+      }
+  },
+  // created(){
+  //   this.getFilterMovies();
+  // }
  
         
 }
@@ -51,6 +57,7 @@ export default {
 <template>
    
    <AppHeader />
+   <SearchBar />
    <AppMain />
 </template>
 

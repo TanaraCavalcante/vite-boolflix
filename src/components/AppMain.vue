@@ -1,5 +1,4 @@
 <script>
-import SearchBar from './SearchBar.vue';
 import ListMovie from './ListMovie.vue';
 
   export default {
@@ -9,15 +8,12 @@ import ListMovie from './ListMovie.vue';
         }
   },
   components:{
-   SearchBar,
    ListMovie
   }
 }
 </script>
 
 <template>
-
-   <SearchBar />
    <ListMovie />
 </template>
 
