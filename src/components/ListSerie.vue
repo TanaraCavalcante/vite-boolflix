@@ -22,6 +22,7 @@ import {store} from "../store"
          </div>
     </div>
     <span>A lista tem {{ store.serieListFilter.length }} Tv Series!</span>
+</section>
 
 </template>
 
