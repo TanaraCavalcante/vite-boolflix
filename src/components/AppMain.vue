@@ -1,5 +1,7 @@
 <script>
 import ListMovie from './ListMovie.vue';
+import ListSerie from './ListSerie.vue';
+
 
   export default {
      data() {
@@ -8,13 +10,15 @@ import ListMovie from './ListMovie.vue';
         }
   },
   components:{
-   ListMovie
+   ListMovie,
+   ListSerie
   }
 }
 </script>
 
 <template>
    <ListMovie />
+   <ListSerie />
 </template>
 
 <style scoped>
