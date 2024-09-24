@@ -10,7 +10,8 @@ export default {
         return {
           selectedItem:'',
           apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=97614400969f8d7a2797b6a67b41513b&query=",
-          store
+          store,
+          apiUrlSerie:"https://api.themoviedb.org/3/search/tv?api_key=97614400969f8d7a2797b6a67b41513b&language=it_IT&query=friends"
         }
   },
   components:{
@@ -22,13 +23,13 @@ export default {
       logMessage(message){
         console.log(`Chiamo log message con ${message}`);
       },
-      //Chiamata API
+      //Chiamata API movies
       getFilterMovies(movieName = ''){
-        console.log('chiamata filterMovies iniziata')
+        console.log('chiamata filter MOVIES iniziata');
         axios.get(this.apiUrl, {
           params: {
              query: movieName,
-    }
+          }
         })
        
         .then((response) =>{
@@ -41,17 +42,34 @@ export default {
         })
 
         .finally(function () {
-        console.log('Chiamata filter movies terminata!')
-
+        console.log('Chiamata filter MOVIES terminata!')
         });  
       },
+
       searchMovieInput(inputSearch){
         console.log(`Il parent rispondi: ${inputSearch}`);
         this.getFilterMovies(inputSearch);
+      },
+
+      // Chiamata API Series 
+      getFilterSeries(){
+        console.log('Chiamata filter SERIES iniziata!');
+        axios.get(this.apiUrlSerie)
+            .then((response) => {
+             console.log(response.data.results);
+             store.serieListFilter = response.data.results
+            })
+           .catch(function (error) {
+            console.log(error);
+           })
+           .finally(function () {
+            console.log('Chiamata filter SERIES terminata')
+           });
       }
   },
   created(){
-  this.getFilterMovies();
+    this.getFilterMovies();
+    this.getFilterSeries();
  }
  
         
