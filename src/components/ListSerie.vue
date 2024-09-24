@@ -15,13 +15,13 @@ import {store} from "../store"
 </script>
 
 <template>
-<section class="container">  
+<section class="container"> 
+    <span>A lista tem {{ store.serieListFilter.length }} Tv Series!</span> 
     <div class="row">
          <div class="col-6 col-lg-3 my-2" v-for="(serieListFilterItem, i) in store.serieListFilter" :key="i" :serieCard="serieListFilterItem" >
-             <ListSerieItem />
+             <ListSerieItem :serieCard="serieListFilterItem"/>
          </div>
     </div>
-    <span>A lista tem {{ store.serieListFilter.length }} Tv Series!</span>
 </section>
 
 </template>

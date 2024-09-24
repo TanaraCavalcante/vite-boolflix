@@ -3,14 +3,13 @@
   export default {
      data() {
         return {
-          searchMovie:'',
+          searchContent:'',
         }
   },
   methods:{
-    getSearchedMovie(message){
-      console.log(`il figlio cerca questo filme: ${message}`);
+    getSearchedContent(message){
+      console.log(`il figlio cerca questo contenuto: ${message}`);
       this.$emit("searchInput", message )
-      
     }
   }
  
@@ -19,8 +18,8 @@
 
 <template>
 <div class="d-flex gap-3 my-3">
-  <input type="text" placeholder="Search a movie" v-model="searchMovie">
-  <button class="btn btn-secondary" @click="getSearchedMovie(searchMovie)"> Search </button>
+  <input type="text" placeholder="Search a movie" v-model="searchContent">
+  <button class="btn btn-secondary" @click="getSearchedContent(searchContent)"> Search </button>
 </div>
 
 </template>

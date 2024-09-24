@@ -11,7 +11,7 @@ export default {
           selectedItem:'',
           apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=97614400969f8d7a2797b6a67b41513b&query=",
           store,
-          apiUrlSerie:"https://api.themoviedb.org/3/search/tv?api_key=97614400969f8d7a2797b6a67b41513b&language=it_IT&query=friends"
+          apiUrlSerie:"https://api.themoviedb.org/3/search/tv?api_key=97614400969f8d7a2797b6a67b41513b&language=it_IT&query="
         }
   },
   components:{
@@ -45,16 +45,22 @@ export default {
         console.log('Chiamata filter MOVIES terminata!')
         });  
       },
-
-      searchMovieInput(inputSearch){
+     
+      //Event-Custom
+      searchContentInput(inputSearch){
         console.log(`Il parent rispondi: ${inputSearch}`);
         this.getFilterMovies(inputSearch);
+        this.getFilterSeries(inputSearch);   //Devo creara un nuovo metodo solo per series?
       },
 
       // Chiamata API Series 
-      getFilterSeries(){
+      getFilterSeries(serieName = ''){
         console.log('Chiamata filter SERIES iniziata!');
-        axios.get(this.apiUrlSerie)
+        axios.get(this.apiUrlSerie, {
+             params: {
+                 query: serieName,
+             }
+        })
             .then((response) => {
              console.log(response.data.results);
              store.serieListFilter = response.data.results
@@ -71,15 +77,14 @@ export default {
     this.getFilterMovies();
     this.getFilterSeries();
  }
- 
-        
+       
 }
 </script>
 
 <template>
    <p class="my-3">{{ store.message }}</p>
    <AppHeader />
-   <SearchBar @search-input="searchMovieInput"/>
+   <SearchBar @search-input="searchContentInput"/>
    <AppMain />
 </template>
 

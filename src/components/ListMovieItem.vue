@@ -2,8 +2,7 @@
 
   export default {
      data() {
-        return {
-          
+        return {  
         }
   },
   props:{
@@ -29,6 +28,6 @@
 
 <style lang="scss" scoped>
    article{
-      height: 260px;
+      height: 280px;
    }
 </style>

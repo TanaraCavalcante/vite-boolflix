@@ -18,10 +18,10 @@
 <template>
 
     <article class="card d-flex">
-            <h3 class="card-title text-center my-4">{{ }}titolo</h3>
-            <p class="card-title text-center">{{  }}titolo-original</p>
-            <p class="card-text">{{ }}linguagem</p>
-            <p class="card-text">{{ }}voto</p>
+            <h3 class="card-title text-center my-4">{{ serieCard.name}}</h3>
+            <p class="card-title text-center">{{ serieCard.original_name }}</p>
+            <p class="card-text">{{serieCard.original_language}}</p>
+            <p class="card-text">{{serieCard.vote_average }}</p>
         
     </article>
 
@@ -29,6 +29,6 @@
 
 <style lang="scss" scoped>
    article{
-      height: 260px;
+      height: 280px;
    }
 </style>
