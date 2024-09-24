@@ -42,6 +42,9 @@ export default {
         console.log('Chiamata filter movies terminata!')
 
         });  
+      },
+      searchMovieInput(inputSearch){
+        console.log(`Il parent rispondi: ${inputSearch}`);
       }
   },
   created(){
@@ -55,7 +58,7 @@ export default {
 <template>
    <p class="my-3">{{ store.message }}</p>
    <AppHeader />
-   <SearchBar />
+   <SearchBar @search-input="searchMovieInput"/>
    <AppMain />
 </template>
 

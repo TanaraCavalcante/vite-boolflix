@@ -7,8 +7,9 @@
         }
   },
   methods:{
-    getSearchedMovie(searchMovie){
-      console.log(`Cerca questo filme: ${this.searchMovie}`)
+    getSearchedMovie(message){
+      console.log(`Cerca questo filme: ${message}`);
+      this.$emit("searchInput", message )
       
     }
   }
@@ -19,7 +20,7 @@
 <template>
 <div class="d-flex gap-3 my-3">
   <input type="text" placeholder="Search a movie" v-model="searchMovie">
-  <button class="btn btn-secondary" @click="getSearchedMovie"> Search </button>
+  <button class="btn btn-secondary" @click="getSearchedMovie(searchMovie)"> Search </button>
 </div>
 
 </template>
