@@ -8,7 +8,7 @@
   },
   methods:{
     getSearchedMovie(message){
-      console.log(`Cerca questo filme: ${message}`);
+      console.log(`il figlio cerca questo filme: ${message}`);
       this.$emit("searchInput", message )
       
     }

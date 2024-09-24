@@ -9,7 +9,7 @@ export default {
      data() {
         return {
           selectedItem:'',
-          apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=97614400969f8d7a2797b6a67b41513b&query=avengers",
+          apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=97614400969f8d7a2797b6a67b41513b&query=",
           store
         }
   },
@@ -23,10 +23,12 @@ export default {
         console.log(`Chiamo log message con ${message}`);
       },
       //Chiamata API
-      getFilterMovies(){
+      getFilterMovies(movieName = ''){
         console.log('chiamata filterMovies iniziata')
         axios.get(this.apiUrl, {
-           //deveriam ter os parametros
+          params: {
+             query: movieName,
+    }
         })
        
         .then((response) =>{
@@ -45,6 +47,7 @@ export default {
       },
       searchMovieInput(inputSearch){
         console.log(`Il parent rispondi: ${inputSearch}`);
+        this.getFilterMovies(inputSearch);
       }
   },
   created(){
