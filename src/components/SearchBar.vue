@@ -18,7 +18,7 @@
 
 <template>
 <div class="d-flex gap-3 my-3">
-  <input type="text" placeholder="Search a movie" v-model="searchContent">
+  <input type="text" placeholder=" What do you want to wach?" v-model="searchContent">
   <button class="btn btn-secondary" @click="getSearchedContent(searchContent)"> Search </button>
 </div>
 

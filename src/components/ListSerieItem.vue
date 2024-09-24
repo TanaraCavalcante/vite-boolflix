@@ -30,5 +30,8 @@
 <style lang="scss" scoped>
    article{
       height: 280px;
+      h3{
+        color: darkblue;
+      }
    }
 </style>

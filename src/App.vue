@@ -50,7 +50,7 @@ export default {
       searchContentInput(inputSearch){
         console.log(`Il parent rispondi: ${inputSearch}`);
         this.getFilterMovies(inputSearch);
-        this.getFilterSeries(inputSearch);   //Devo creara un nuovo metodo solo per series?
+        this.getFilterSeries(inputSearch); 
       },
 
       // Chiamata API Series 
